@@ -24,15 +24,19 @@
                 class="text-input" 
                 placeholder="write here your to-do thing "
                 v-model.trim="todoUser"
+                @keyup.enter="addTodo"
                 >
                 <button @click="addTodo">add!</button>
 
             </div>
 
             <ul>
-                <li v-for="item in todoList" :class="item.done ? 'line-through' : '' " >
-                    {{item.text}} 
-                    <span class="cancel">&cross;</span>
+                <li v-for="(item, index) in todoList" >
+                    <span @click="taskDone(index)" :class="item.done ? 'line-through' : '' ">{{item.text}} </span>
+                    <div class="icons">
+                        <span v-if="item.done" class="check">&check;</span>
+                        <span v-else class="cancel" @click="cancelTask(index)">&cross;</span>
+                    </div>
                 </li>
                 
             </ul>

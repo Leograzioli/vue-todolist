@@ -71,7 +71,17 @@
     text-decoration: line-through;
 }
 
+
+
 .cancel {
     color: red;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.check {
+    color: green;
+    font-weight: bold;
+    margin-left: 0.2rem;
+    cursor: pointer;
 }
