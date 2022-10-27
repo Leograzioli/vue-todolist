@@ -16,6 +16,7 @@
         <div class="todo-container">
             <h1 class="tittle">My todo list:</h1>
             
+            <!-- form  -->
             <div class="form">
                 <label for="to-do" class="hidden"> add things to do:</label>
                 <input 
@@ -27,12 +28,21 @@
                 @keyup.enter="addTodo"
                 >
                 <button @click="addTodo">add!</button>
-
             </div>
 
+            <!-- to-do list  -->
             <ul>
+
+                <!-- looped li to add as many li the user wants -->
                 <li v-for="(item, index) in todoList" >
-                    <span @click="taskDone(index)" :class="item.done ? 'line-through' : '' ">{{item.text}} </span>
+                    <span 
+                    @click="taskDone(index)" 
+                    :class="item.done ? 'line-through' : '' "
+                    >
+                    {{item.text}} 
+                    </span>
+                   
+                    <!-- icons  -->
                     <div class="icons">
                         <span v-if="item.done" class="check">&check;</span>
                         <span v-else class="cancel" @click="cancelTask(index)">&cross;</span>
