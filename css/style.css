@@ -39,6 +39,9 @@
     padding: 0.8rem 0;
     border-bottom:  1px solid rgba(102, 102, 102, 0.486);
     font-size: larger;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 .todo-container .form {
@@ -56,9 +59,19 @@
 .todo-container button {
     margin-left: 0.5rem;
     border-radius: 20px;
-    padding: 0 1rem;
+    padding: 0 0.7rem;
+    cursor: pointer;
 }
 
 .hidden {
     display: none;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.cancel {
+    color: red;
+    font-weight: bold;
 }

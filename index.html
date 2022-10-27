@@ -18,14 +18,21 @@
             
             <div class="form">
                 <label for="to-do" class="hidden"> add things to do:</label>
-                <input type="text" id="to-do" class="text-input" placeholder="write here your to-do thing ">
-                <button>add!</button>
+                <input 
+                type="text" 
+                id="to-do" 
+                class="text-input" 
+                placeholder="write here your to-do thing "
+                v-model.trim="todoUser"
+                >
+                <button @click="addTodo">add!</button>
 
             </div>
 
             <ul>
-                <li>
-                    lista 
+                <li v-for="item in todoList" :class="item.done ? 'line-through' : '' " >
+                    {{item.text}} 
+                    <span class="cancel">&cross;</span>
                 </li>
                 
             </ul>
